@@ -1,12 +1,12 @@
 extends Camera2D
 
-@onready var boundary_tilemap: TileMapLayer = $"../../LevelTML"
+@onready var level_tml: TileMapLayer = %LevelTML
 
 func _ready() -> void:
 	position = Vector2.ZERO
 	
-	var map_rect: Rect2i = boundary_tilemap.get_used_rect()
-	var tile_size: int = boundary_tilemap.tile_set.tile_size.x
+	var map_rect: Rect2i = level_tml.get_used_rect()
+	var tile_size: int = level_tml.tile_set.tile_size.x
 	
 	var tml_scale: int = 4
 	

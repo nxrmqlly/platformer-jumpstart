@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ngxu3r5fvxg0"]
+
+[ext_resource type="Script" uid="uid://cvuhplbnr2twh" path="res://scripts/key.gd" id="1_yk2u2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnkt6"]
+size = Vector2(20, 12)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ndie3"]
+load_path = "res://.godot/imported/tilemap_packed.png-3402b15223a5302a12f39cf0a47876c9.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_id6dk"]
+atlas = SubResource("CompressedTexture2D_ndie3")
+region = Rect2(126, 18, 18, 18)
+
+[node name="Key" type="Node2D" unique_id=1297354591]
+scale = Vector2(4, 4)
+script = ExtResource("1_yk2u2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1864559356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=910490785]
+shape = SubResource("RectangleShape2D_vnkt6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1105277819]
+texture_filter = 1
+texture = SubResource("AtlasTexture_id6dk")
