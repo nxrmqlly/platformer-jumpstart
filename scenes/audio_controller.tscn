@@ -8,4 +8,3 @@ script = ExtResource("1_5dt40")
 
 [node name="BgMusic" type="AudioStreamPlayer" parent="." unique_id=1985829485]
 stream = ExtResource("2_cedxo")
-volume_db = 4.269

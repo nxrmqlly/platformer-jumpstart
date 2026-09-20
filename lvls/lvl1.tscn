@@ -899,6 +899,7 @@ script = ExtResource("9_4f2nx")
 
 [node name="PausePanel" type="Panel" parent="UI/Pause" unique_id=2085607957]
 unique_name_in_owner = true
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -958,21 +959,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="UI/Instructions/StartPanel" unique_id=259203635]
+[node name="How2Win" type="Label" parent="UI/Instructions/StartPanel" unique_id=259203635]
 layout_mode = 0
-offset_left = 368.0
-offset_top = 112.0
-offset_right = 796.0
-offset_bottom = 359.0
+offset_left = 204.0
+offset_top = 121.0
+offset_right = 970.0
+offset_bottom = 368.0
 theme_override_font_sizes/font_size = 34
 text = "How 2 Win:
-1. Kill all the blue enemies
+1. Kill all the blue enemies by jumping on them
 2. Collect the key
 3. Go to the flag
 4. Don't die"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="UI/Instructions/StartPanel" unique_id=1253150458]
+[node name="Controls" type="Label" parent="UI/Instructions/StartPanel" unique_id=1253150458]
 layout_mode = 0
 offset_left = 840.0
 offset_top = 504.0
