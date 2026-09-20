@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bs4fk5vg2tlpu"]
+
+[ext_resource type="Script" uid="uid://bx0hig0fxov6t" path="res://scripts/audio_controller.gd" id="1_5dt40"]
+[ext_resource type="AudioStream" uid="uid://3xo7cnlycyr2" path="res://audio/jazz_bg.mp3" id="2_cedxo"]
+
+[node name="AudioController" type="Node" unique_id=2119901214]
+script = ExtResource("1_5dt40")
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="." unique_id=1985829485]
+stream = ExtResource("2_cedxo")
+volume_db = 4.269

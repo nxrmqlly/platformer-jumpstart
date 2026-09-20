@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://doo3hd6qg2bwt" path="res://img/tilemap-characters_packed.png" id="4_4f2nx"]
 [ext_resource type="Script" uid="uid://cgwa6ybwol5sm" path="res://scripts/camera_2d.gd" id="4_7k4ek"]
 [ext_resource type="PackedScene" uid="uid://ccaaeqervvfo2" path="res://scenes/flag.tscn" id="5_7imaj"]
+[ext_resource type="PackedScene" uid="uid://bs4fk5vg2tlpu" path="res://scenes/audio_controller.tscn" id="5_42d0g"]
 [ext_resource type="Texture2D" uid="uid://b1t6bc7tekhel" path="res://img/tilemap_packed.png" id="5_ogxc3"]
 [ext_resource type="PackedScene" uid="uid://ngxu3r5fvxg0" path="res://scenes/key.tscn" id="5_vu1yf"]
 [ext_resource type="Script" uid="uid://hjsdl26cnmj0" path="res://scripts/kill_zone.gd" id="6_vu1yf"]
@@ -749,6 +750,8 @@ enemy_icons = [NodePath("../UI/EnemyPanel/HBoxContainer/EnemyIcon"), NodePath(".
 hearts = [NodePath("../UI/HealthPanel/HBoxContainer/Heart"), NodePath("../UI/HealthPanel/HBoxContainer/Heart2"), NodePath("../UI/HealthPanel/HBoxContainer/Heart3")]
 has_key_icon = NodePath("../UI/KeyPanel/HasKeyIcon")
 
+[node name="AudioController" parent="." unique_id=2119901214 instance=ExtResource("5_42d0g")]
+
 [node name="SceneObj" type="Node" parent="." unique_id=1104222082]
 
 [node name="Flag" parent="SceneObj" unique_id=1557490513 node_paths=PackedStringArray("win_panel") instance=ExtResource("5_7imaj")]
@@ -896,7 +899,6 @@ script = ExtResource("9_4f2nx")
 
 [node name="PausePanel" type="Panel" parent="UI/Pause" unique_id=2085607957]
 unique_name_in_owner = true
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -932,6 +934,12 @@ process_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "RESUME"
+
+[node name="ToggleMusic" type="Button" parent="UI/Pause/PausePanel/VBoxContainer" unique_id=97596541]
+process_mode = 2
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TOGGLE MUSIC"
 
 [node name="Exit" type="Button" parent="UI/Pause/PausePanel/VBoxContainer" unique_id=1785965749]
 process_mode = 2
@@ -1019,6 +1027,7 @@ text = ">> BYE :( <<"
 
 [connection signal="body_entered" from="VoidZone" to="VoidZone" method="_on_body_entered"]
 [connection signal="pressed" from="UI/Pause/PausePanel/VBoxContainer/Resume" to="UI/Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/Pause/PausePanel/VBoxContainer/ToggleMusic" to="UI/Pause" method="_on_toggle_music_pressed"]
 [connection signal="pressed" from="UI/Pause/PausePanel/VBoxContainer/Exit" to="UI/Pause" method="_on_exit_pressed"]
 [connection signal="pressed" from="UI/Instructions/StartPanel/StartButton" to="UI/Instructions" method="_on_start_button_pressed"]
 [connection signal="pressed" from="UI/Win/WinPanel/ByeButton" to="UI/Pause" method="_on_exit_pressed"]

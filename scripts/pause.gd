@@ -15,3 +15,6 @@ func _on_resume_pressed() -> void:
 func _on_exit_pressed() -> void:
 	get_tree().paused = false
 	get_tree().quit()
+
+func _on_toggle_music_pressed() -> void:
+	AudioController.mute = !AudioController.mute
