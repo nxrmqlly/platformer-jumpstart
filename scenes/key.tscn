@@ -24,3 +24,5 @@ shape = SubResource("RectangleShape2D_vnkt6")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1105277819]
 texture_filter = 1
 texture = SubResource("AtlasTexture_id6dk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

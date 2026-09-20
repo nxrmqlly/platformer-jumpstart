@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://ccaaeqervvfo2"]
+
+[ext_resource type="Script" uid="uid://b0hm2gf46fhmy" path="res://scripts/flag.gd" id="1_32e5v"]
+[ext_resource type="Texture2D" uid="uid://b1t6bc7tekhel" path="res://img/tilemap_packed.png" id="1_76ss4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32e5v"]
+atlas = ExtResource("1_76ss4")
+region = Rect2(198, 90, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q38m2"]
+atlas = ExtResource("1_76ss4")
+region = Rect2(216, 90, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l28h1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32e5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q38m2")
+}],
+"loop": 1,
+"name": &"waveflag",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l28h1"]
+
+[node name="Flag" type="Node2D" unique_id=1557490513]
+scale = Vector2(4, 4)
+script = ExtResource("1_32e5v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1743392852]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_l28h1")
+animation = &"waveflag"
+autoplay = "waveflag"
+frame_progress = 0.56504524
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2117033589]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1552761155]
+shape = SubResource("RectangleShape2D_l28h1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

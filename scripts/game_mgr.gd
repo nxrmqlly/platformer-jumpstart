@@ -6,8 +6,17 @@ var has_key = false
 
 @export var enemy_icons: Array[Node]
 @export var hearts: Array[Node]
+@export var has_key_icon: Node
+
+func _ready() -> void:
+	has_key_icon.hide()
+	
+	for i in 3:
+		hearts[i].show()
+		enemy_icons[i].show()
 
 func key_acquired():
+	has_key_icon.show()
 	has_key = true
 
 func reduce_enemy():
