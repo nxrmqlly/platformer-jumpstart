@@ -4,6 +4,10 @@ A very simple platformer game made for haven-jumpstart.
 
 ![Screenshot of the game](./assets/game_screenshot.png)
 
+## Play it!
+
+Try the game out, in your browser on itch.io [here](https://nxrmql.itch.io/jumpstart-platformer-hc)
+
 ## Controls:
 
 `A` / `S` or `←` / `→` to move
